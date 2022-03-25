@@ -175,7 +175,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
         await m.reply_text(R("play_reply_file"))
 
 
-@Client.on_message(command(["play", "شغل", f"play@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["play", "تشغيل", "شغل", f"play@{BOT_USERNAME}"]) & other_filters)
 @check_blacklist()
 @require_admin(permissions=["can_manage_voice_chats", "can_delete_messages", "can_invite_users"], self=True)
 async def audio_stream(c: Client, m: Message):
@@ -369,7 +369,7 @@ async def audio_stream(c: Client, m: Message):
                             await m.reply_text(R("play_no_audio_source"))
 
 
-@Client.on_message(command(["stream", f"stream@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["stream", "لايف", f"stream@{BOT_USERNAME}"]) & other_filters)
 @check_blacklist()
 @require_admin(permissions=["can_manage_voice_chats", "can_delete_messages", "can_invite_users"], self=True)
 async def live_music_stream(c: Client, m: Message):
