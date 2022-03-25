@@ -196,7 +196,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
         await m.reply_text(R("play_reply_video"))
 
 
-@Client.on_message(command(["vplay", f"vplay@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["vplay", "فيديو", f"vplay@{BOT_USERNAME}"]) & other_filters)
 @check_blacklist()
 @require_admin(permissions=["can_manage_voice_chats", "can_delete_messages", "can_invite_users"], self=True)
 async def video_stream(c: Client, m: Message):
